@@ -47,3 +47,8 @@ Note:
 * Download Android config file, add to directory `app`
 
 
+## Override default base app
+
+* Replace package name `lifeplanner.baseflutterapp`
+* Add repository to Travis
+* Register a new firebase store, replace `google-services.json`
