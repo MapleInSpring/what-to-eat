@@ -39,3 +39,11 @@ Note:
 * Update `app/build.gradle` to use correct release key properties 
 
 * Configure Travis to include new repository
+
+## Firebase Cloudstore
+
+* Register firebase app
+
+* Download Android config file, add to directory `app`
+
+

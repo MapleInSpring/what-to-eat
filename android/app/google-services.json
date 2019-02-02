@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "651192252570",
+    "firebase_url": "https://base-flutter-app.firebaseio.com",
+    "project_id": "base-flutter-app",
+    "storage_bucket": "base-flutter-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651192252570:android:65fcfd3637612537",
+        "android_client_info": {
+          "package_name": "lifeplanner.baseflutterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651192252570-vd0rkiq5eghli0998kqvrhdbhbnt29fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7HRLe-bl-0Wg7-QvkOAv3VaO-bjTzMIw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
