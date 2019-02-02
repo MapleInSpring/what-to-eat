@@ -1,4 +1,4 @@
-package lifeplanner.baseflutterapp;
+package lifeplanner.whattoeat;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
