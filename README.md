@@ -14,3 +14,18 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.io/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+
+
+## Generate Android Release keystore
+* Generate keystore
+
+keytool -genkey -v -keystore `PATH_TO_OUTPUT_FILE` -keyalg RSA -keysize 2048 -validity 10000 -alias key
+
+* Use release keystore in `app/build.gradle`
+
+* Build release apk locally by running `flutter build apk`
+
+Note:
+1. Add secret files to gitignore, e.g. `keystore`, `key.properties`
+
+[flutter guide](https://flutter.io/docs/deployment/android)
