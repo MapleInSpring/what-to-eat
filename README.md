@@ -29,3 +29,13 @@ Note:
 1. Add secret files to gitignore, e.g. `keystore`, `key.properties`
 
 [flutter guide](https://flutter.io/docs/deployment/android)
+
+## Travis CI
+
+* Encrypt keystore file with openssl
+
+`openssl enc -aes-256-cbc -salt -in android/key.jks -out android/key.jks.enc -k PASSWORD`
+
+* Update `app/build.gradle` to use correct release key properties 
+
+* Configure Travis to include new repository

@@ -58,10 +58,19 @@ android {
         }
     }
 
-    signingConfigs.release.storeFile = file(keystoreProperties['storeFile'])
-    signingConfigs.release.storePassword = keystoreProperties['keyPassword']
-    signingConfigs.release.keyAlias = keystoreProperties['keyAlias']
-    signingConfigs.release.keyPassword = keystoreProperties['storePassword']
+    def isRunningOnTravis = System.getenv("CI") == "true"
+
+    if (isRunningOnTravis) {
+        signingConfigs.release.storeFile = file("../key.jks")
+        signingConfigs.release.storePassword = System.getenv("KEYSTORE_PASSWORD")
+        signingConfigs.release.keyAlias = System.getenv("KEYSTORE_ALIAS")
+        signingConfigs.release.keyPassword = System.getenv("KEYSTORE_ALIAS_PASSWORD")
+    } else {
+        signingConfigs.release.storeFile = file(keystoreProperties['storeFile'])
+        signingConfigs.release.storePassword = keystoreProperties['keyPassword']
+        signingConfigs.release.keyAlias = keystoreProperties['keyAlias']
+        signingConfigs.release.keyPassword = keystoreProperties['storePassword']
+    }
 }
 
 flutter {

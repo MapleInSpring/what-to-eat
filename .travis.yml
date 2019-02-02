@@ -1,0 +1,29 @@
+sudo: required
+language: android
+os:
+- linux
+android:
+  components:
+  - tools
+  - platform-tools
+  - build-tools-28.0.3
+  - android-27 - extra-android-support
+  - extra-google-google_play_services
+  - extra-android-m2repository
+  - extra-google-m2repository
+  - addon-google_apis-google-21
+before_install:
+  - openssl enc -aes-256-cbc -d -in android/key.jks.enc -out android/key.jks -k $DECRYPT_KEY
+  - git clone -b dev https://github.com/flutter/flutter.git
+  - wget http://services.gradle.org/distributions/gradle-4.10.2-bin.zip
+  - unzip gradle-4.10.2-bin.zip
+install:
+  - export GRADLE_HOME=$PWD/gradle-4.10.2
+  - export PATH=$GRADLE_HOME/bin:$PATH
+  - export PATH=./flutter/bin:$PATH
+script:
+- flutter build apk
+- ls build/app/outputs/apk/release/
+cache:
+  directories:
+    - "$HOME/.pub-cache"
